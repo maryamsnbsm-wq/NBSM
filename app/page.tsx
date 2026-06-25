@@ -1,23 +1,52 @@
-export default function Page() {
+'use client';
+
+import React from 'react';
+import { Database, MessageSquare, ClipboardList } from 'lucide-react';
+import Link from 'next/link';
+
+export default function HomePage() {
   return (
-    <main className="relative flex min-h-screen items-center justify-center bg-[color:light-dark(#fff,#000)] text-[color:light-dark(#000,#fff)]">
-      <svg
-        aria-hidden="true"
-        className="size-20"
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p className="absolute left-1/2 top-[calc(50%+56px)] -translate-x-1/2 whitespace-nowrap text-sm font-medium text-muted-foreground">
-        Your v0 generation will show here.
-      </p>
-    </main>
-  )
+    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+      <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-150 max-w-md w-full text-center space-y-5">
+        
+        {/* BRAND NEW ALL-CAPS BOLD TITLE ACCORDING TO YOUR SPECIFICATIONS */}
+        <div className="space-y-1">
+          <h1 className="text-xl md:text-2xl font-black text-slate-900 tracking-wide uppercase leading-tight">
+            NEWTON BRITISH SCHOOL MURAIKH LABORATORY SYSTEM
+          </h1>
+          <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            Designed by Mariam Selim • Workspace Gateway
+          </p>
+        </div>
+
+        <p className="text-xs text-gray-500 font-medium">
+          Select a workspace control portal to begin operational duties.
+        </p>
+
+        {/* NAVIGATION LAUNCH LINKS */}
+        <div className="flex flex-col gap-3 pt-2">
+          <Link 
+            href="/inventory" 
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs transition duration-150 flex items-center justify-center gap-2 shadow-sm"
+          >
+            <Database size={14} /> Go to Inventory Manager
+          </Link>
+
+          <Link 
+            href="/request" 
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-xs transition duration-150 flex items-center justify-center gap-2 shadow-sm"
+          >
+            <MessageSquare size={14} /> Go to Teacher Portal
+          </Link>
+
+          <Link 
+            href="/dashboard" 
+            className="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-4 rounded-xl text-xs transition duration-150 flex items-center justify-center gap-2 shadow-sm"
+          >
+            <ClipboardList size={14} /> Go to Tech Dashboard
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
